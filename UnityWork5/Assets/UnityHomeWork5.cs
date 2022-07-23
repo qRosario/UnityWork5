@@ -74,4 +74,32 @@ public class UnityHomeWork5 : MonoBehaviour
     //        }
     //        return -1;
     //    }
+    public void OnSelectionSort()
+    {
+        int [] _array = { 81, 22, 13, 34, 10, 34, 15, 26, 71, 68 };
+        int _temp;
+        int _min;
+
+        for (int i = 0; i < _array.Length; i++)
+        {
+            _min = i;
+            for (int j = i; j < _array.Length; j++)
+            {
+                if (_array[j] < _array[_min])
+                {
+                    _min = j;
+                }
+            }
+            _temp = _array[_min];
+            _array[_min] = _array[i];
+            _array[i] = _temp;
+
+        }
+        for (int i = 0; i < _array.Length; i++)
+        {
+            Debug.Log(_array[i]);
+        }
+
+
+    }
 }
